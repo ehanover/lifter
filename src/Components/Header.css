@@ -1,0 +1,16 @@
+.header-div {
+  margin: auto;
+  width: 100%;
+  
+  color: darkgrey;
+  text-align: center;
+}
+
+.header-div a {
+  color: cornflowerblue;
+  white-space: nowrap;
+}
+
+.header-div * {
+  font-size: 0.87em;
+}

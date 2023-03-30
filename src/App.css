@@ -1,0 +1,33 @@
+@font-face {
+  font-family: Qaz-Regular;
+  src: url("../public/qaz/Qaz-Regular.ttf");
+}
+
+
+body, input, select, button, label {
+  font-size: 1.2em;
+}
+body, select, button {
+  font-family: "Qaz-Regular", sans-serif
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.full-parent-width {
+  /* https://stackoverflow.com/questions/18031354/100-width-is-bigger-than-parents-div */
+  width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.page-title {
+  font-size: 1.6em;
+  text-decoration-line: underline;
+
+  margin: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
