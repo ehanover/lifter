@@ -16,18 +16,13 @@ export default function Login() {
     setClient(null);
   }, [])
 
-  useEffect(() => {
-    // console.log("client update:", client);
-    
-    if(client)
-      navigate("/browse_type");
-  }, [client])
-
   const onSubmit = () => {
     let supabase = createClient(domain, anonID);
     // console.log("Created supabase instance:", supabase);
 
     setClient(supabase);
+    if(client)
+      navigate("/browse_type")
   }
 
   return (
@@ -40,11 +35,11 @@ export default function Login() {
       <br/>
 
       <label htmlFor="anonid">Anon ID:</label>
-      <input type="text" name="anonid" className="full-parent-width" onChange={e => setAnonID(e.target.value)} value={anonID}/>
+      <input type="password" name="anonid" className="full-parent-width" onChange={e => setAnonID(e.target.value)} value={anonID}/>
       <br/>
 
       <br/>
-      <input type="button" value="Submit" onClick={onSubmit}/>
+      <input type="submit" value="Submit" onClick={onSubmit}/>
     </div>
   );
 }
