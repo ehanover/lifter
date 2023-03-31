@@ -6,21 +6,11 @@ import "./MyAutocomplete.css";
 
 export default function MyAutocomplete(props) {
 
-  const [name, setName] = useState("");
   const hintLimit = 6;
 
-  const childOnNameChange = (e) => {
-    let n = e.target.value.toLowerCase();
-    setName(n);
+  const hintOnClick = (hint) => () => props.onNameChange(hint);
 
-    if(props.onNameChange) {
-      props.onNameChange(n); // communicate value back to parent via onChange function passed in prop
-    }
-  }
-
-  const hintOnClick = (hint) => () => setName(hint);
-
-  const matchingHints = () => props.hints.filter((h) => h.toLowerCase().includes(name)).slice(0, hintLimit);
+  const matchingHints = () => props.hints.filter((h) => h.toLowerCase().includes(props.nameValue)).slice(0, hintLimit);
   const matchingHintsGrid = () => {
     if(!props.hints)
       return;
@@ -36,7 +26,7 @@ export default function MyAutocomplete(props) {
 
   return (
     <div>
-      <input type="text" name="autocomplete-text" className="full-parent-width" id="autocomplete-text" onChange={childOnNameChange} value={name}/>
+      <input type="text" name="autocomplete-text" className="full-parent-width" id="autocomplete-text" onChange={props.onNameChange} value={props.nameValue}/>
 
       <div className="hint-grid">
         {matchingHintsGrid()}

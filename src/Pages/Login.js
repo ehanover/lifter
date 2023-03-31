@@ -17,7 +17,7 @@ export default function Login() {
   }, [])
 
   useEffect(() => {
-    console.log("client update:", client);
+    // console.log("client update:", client);
     
     if(client)
       navigate("/browse_date");

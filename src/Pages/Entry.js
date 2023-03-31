@@ -8,7 +8,7 @@ import { Navigate } from "react-router-dom";
 
 export default function Entry() {
 
-  const {client, setClient} = useContext(ClientContext);
+  const {client} = useContext(ClientContext);
   const [hints, setHints] = useState(null);
 
   const [name, setName] = useState("");
@@ -17,9 +17,12 @@ export default function Entry() {
   const [totalSets, setTotalSets] = useState("");
   const [date, setDate] = useState("");
 
+
+  const trim = (s) => s.replace(/^\s+|\s+$/g, '');
+
   useEffect(() => {
-    // if(!client)
-    //   return;
+    if(!client)
+      return;
     
     let currentDate = new Date();
     setDate(currentDate.toISOString().slice(0, 10));
@@ -39,9 +42,9 @@ export default function Entry() {
 
   const submit = () => {
     // check if name is novel or not (can use hints array) - warn user if novel
-    if(!hints.includes(name)) {
-      console.log("novel exercise name detected");
-    }
+    // if(!hints.includes(name)) {
+    //   console.log("novel exercise name detected");
+    // }
 
     async function insert(newrow) {
       // console.log("inserting data:", data);
@@ -56,13 +59,14 @@ export default function Entry() {
       }
     }
     insert({
-      date:date, name:name, max_weight:maxWeight, max_reps:maxWeightReps, total_sets:totalSets
+      date:date, name:trim(name), max_weight:maxWeight, max_reps:maxWeightReps, total_sets:totalSets
     });
   }
 
-  // if(!client) {
-  //   return <Navigate to="/login" replace />
-  // }
+
+  if(!client) {
+    return <Navigate to="/login" replace />
+  }
 
   return (
     <div>
@@ -73,16 +77,16 @@ export default function Entry() {
       <div>
         <label htmlFor="autocomplete-text">Name: </label>
         <br/>
-        <MyAutocomplete hints={hints} onNameChange={(e) => setName(e)}/>
+        <MyAutocomplete hints={hints} onNameChange={(e) => setName(e.target.value)} nameValue={name}/>
 
         <table>
           <tbody>
             <tr>
               <td><label htmlFor="maxWeight">Max weight: </label></td>
-              <td className="entry-column"><input type="text" name="maxWeight" inputMode="numeric" pattern="\d*" maxLength={3} size={4} onChange={(e) => setMaxWeight(e.target.value)} value={maxWeight}/></td>
+              <td className="entry-column"><input type="text" name="maxWeight" inputMode="numeric" maxLength={5} size={4} onChange={(e) => setMaxWeight(e.target.value)} value={maxWeight}/></td>
             </tr>
             <tr>
-              <td><label htmlFor="maxWeightReps">Sets with max weight: </label></td>
+              <td><label htmlFor="maxWeightReps">Reps with max weight: </label></td>
               <td className="entry-column"><input type="text" name="maxWeightReps" inputMode="numeric" pattern="\d*" maxLength={3} size={4} onChange={(e) => setMaxWeightReps(e.target.value)} value={maxWeightReps}/></td>
             </tr>
             <tr>
