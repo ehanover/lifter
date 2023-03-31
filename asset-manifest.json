@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/lifter/static/css/main.d1c0d271.css",
+    "main.js": "/lifter/static/js/main.d8f11e8a.js",
+    "static/media/Qaz-Regular.ttf": "/lifter/static/media/Qaz-Regular.a126cdac043c9bbd661d.ttf",
+    "index.html": "/lifter/index.html",
+    "main.d1c0d271.css.map": "/lifter/static/css/main.d1c0d271.css.map",
+    "main.d8f11e8a.js.map": "/lifter/static/js/main.d8f11e8a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1c0d271.css",
+    "static/js/main.d8f11e8a.js"
+  ]
+}
