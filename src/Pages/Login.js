@@ -20,7 +20,7 @@ export default function Login() {
     // console.log("client update:", client);
     
     if(client)
-      navigate("/browse_date");
+      navigate("/browse_type");
   }, [client])
 
   const onSubmit = () => {

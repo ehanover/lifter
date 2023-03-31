@@ -3,6 +3,9 @@
   src: url("../public/qaz/Qaz-Regular.ttf");
 }
 
+body {
+  margin: 8px 10px;
+}
 
 body, input, select, button, label {
   font-size: 1.2em;

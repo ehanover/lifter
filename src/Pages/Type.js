@@ -1,3 +1,4 @@
+import "./Type.css"
 import { useContext, useEffect, useState } from 'react';
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ClientContext } from '../App';
@@ -9,9 +10,9 @@ export default function Type() {
   const {typeParam} = useParams();
   const [exercises, setExercises] = useState([])
 
-  const push = ["bench", "dips"];
-  const pull = ["pull ups"];
-  const leg = ["squat"];
+  const push = ["bench", "dip", "incline press", "lat incline press machine", "lat raise", "military press", "pec fly", "shoulder press", "tricep overhead pull", "tricep pull down split"];
+  const pull = ["bar pull", "bar pull iso", "bicep curl", "face pull split", "hammer curl", "high row machine", "low row split", "preacher curl bench", "preacher curl machine", "pull down", "pull down machine", "pull up", "rear delt", "shrug"];
+  const leg = ["squat", "calf raises", "deadlift", "hip abduction", "hip adduction", "leg extension", "leg press", "seated leg curl", "split lunge", "split squat machine", "squat"];
 
   const filterByType = (name) => {
     if(typeParam === "all") {
@@ -66,9 +67,9 @@ export default function Type() {
       <Header />
       
       <p className="page-title">All {typeParam} exercises</p>
-      <ul>
+      <ul id="type-ul">
         {exercises.map(e =>
-          <li key={e}><Link to={"/exercise/" + e}>{e}</Link></li>
+          <li className="type-li" key={e}><Link className="type-link" to={"/exercise/" + e}>{e}</Link></li>
         )}
       </ul>
 

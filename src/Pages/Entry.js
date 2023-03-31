@@ -59,7 +59,7 @@ export default function Entry() {
       }
     }
     insert({
-      date:date, name:trim(name), max_weight:maxWeight, max_reps:maxWeightReps, total_sets:totalSets
+      date:date, name:trim(name.toLowerCase()), max_weight:maxWeight, max_reps:maxWeightReps, total_sets:totalSets
     });
   }
 
@@ -107,30 +107,3 @@ export default function Entry() {
     </div>
   );
 }
-
-
-/*
-<label htmlFor="autocomplete-text">Name: </label>
-<br/>
-<MyAutocomplete hints={hints} onNameChange={(e) => setName(e)}/>
-
-<label htmlFor="maxWeight">Max weight: </label>
-<br/>
-<input type="text" name="maxWeight" inputMode="numeric" pattern="\d*" onChange={(e) => setMaxWeight(e.target.value)} value={maxWeight}/>
-
-<label htmlFor="maxWeightReps">Sets with max weight: </label>
-<br/>
-<input type="text" name="maxWeightReps" inputMode="numeric" pattern="\d*" onChange={(e) => setmaxWeightReps(e.target.value)} value={maxWeightReps}/>
-
-<label htmlFor="totalSets">Total sets: </label>
-<br/>
-<input type="text" name="totalSets" inputMode="numeric" pattern="\d*" onChange={(e) => setTotalSets(e.target.value)} value={totalSets}/>
-
-<label htmlFor="date">Date: </label>
-<br/>
-<input type="date" name="date" inputMode="numeric" pattern="\d*" onChange={(e) => setDate(e.target.value)} value={date}/>
-<br/>
-
-<input type="button" value="Submit" onClick={submit}/>
-*/
-  

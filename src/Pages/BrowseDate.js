@@ -1,3 +1,4 @@
+import "./BrowseDate.css";
 import Header from "../Components/Header";
 import { ClientContext } from '../App';
 import { useContext, useEffect, useState } from 'react';
@@ -15,7 +16,7 @@ export default function BrowseDate() {
     }
 
     async function fetchDates() {
-      const {data, error} = await client.from("exercises").select("date, name, max_weight, max_reps, total_sets").order("date, created_at");
+      const {data, error} = await client.from("exercises").select("date, name, max_weight, max_reps, total_sets").limit(100).order("date", {"ascending": false});
       if(error) {
         console.log("BrowseDate.js failed fetching dates:", error);
       } else {
@@ -25,7 +26,7 @@ export default function BrowseDate() {
         let lastDateGroup = []
         let dataProcessed = {};
         for(let i=0; i<data.length; i++) {
-          if(data[i].date != lastDate) {
+          if(data[i].date !== lastDate) {
             dataProcessed[lastDate] = lastDateGroup;
 
             lastDateGroup = [];
@@ -58,12 +59,12 @@ export default function BrowseDate() {
       
       <p className="page-title">Browse by Date</p>
 
-      <ul>
+      <ul id="date-ul">
         {Object.entries(dateData).map(([date, exercises]) => 
-          <li key={date}>
-            <span style={{color: "cornflowerblue"}}>{date}</span>
+          <li className="date-li" key={date}>
+            <span className="date-title">{date}</span>
             {exercises.map((e) => 
-              <div>{e.name}, {e.max_weight}x{e.max_reps}, {e.total_sets}s</div>
+              <div key={e.name}>{e.name}, {e.max_weight}x{e.max_reps}, {e.total_sets}s</div>
             )}
           </li>
         )}

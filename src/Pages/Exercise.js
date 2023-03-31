@@ -1,3 +1,4 @@
+import "./Exercise.css"
 import { useContext, useEffect, useState } from 'react';
 import { Navigate, useParams } from "react-router-dom";
 import { ClientContext } from '../App';
@@ -5,7 +6,7 @@ import Header from "../Components/Header";
 
 
 export default function Exercise() {
-  const {client, setClient} = useContext(ClientContext);
+  const {client} = useContext(ClientContext);
   const {exerciseParam} = useParams();
   const [instances, setInstances] = useState(null);
 
@@ -40,7 +41,7 @@ export default function Exercise() {
       <table>
         <tbody>
           {instances.map(e => 
-            <tr key={e.date}>
+            <tr key={e.date} className="exercise-row">
               <td>{e.date}</td>
               <td>{e.max_reps}x{e.max_weight}</td>
               <td>{e.total_sets}s</td>

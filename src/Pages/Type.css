@@ -1,0 +1,12 @@
+#type-ul {
+  margin: 0;
+}
+
+.type-li {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.type-link {
+  color: cornflowerblue;
+}

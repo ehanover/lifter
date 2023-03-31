@@ -1,0 +1,12 @@
+#date-ul {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.date-title {
+  color: cornflowerblue;
+}
+
+.date-li {
+  padding-bottom: 8px;
+}
