@@ -6,7 +6,7 @@ import { ClientContext } from '../App';
 
 export default function Login() {
 
-  const {client, setClient} = useContext(ClientContext);
+  const {setClient} = useContext(ClientContext);
   const navigate = useNavigate();
 
   const [domain, setDomain] = useState("");
@@ -20,9 +20,12 @@ export default function Login() {
     let supabase = createClient(domain, anonID);
     // console.log("Created supabase instance:", supabase);
 
-    setClient(supabase);
-    if(client)
-      navigate("/browse_type")
+    if(supabase) {
+      setClient(supabase);
+      navigate("/browse_type");
+    } else {
+      console.error("Failed to create supabase instance");
+    }
   }
 
   return (
