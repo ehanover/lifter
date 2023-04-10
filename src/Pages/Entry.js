@@ -28,9 +28,9 @@ export default function Entry() {
     setDate(currentDate.toISOString().slice(0, 10));
 
     async function getHints() {
-      // distinct_name is a "view" that aliases to "select distinct name from exercises"
+      // name_distinct is a "view" that aliases to "select distinct name from exercises"
       // see https://github.com/orgs/supabase/discussions/3294#discussioncomment-1374282
-      const {data, error} = await client.from("distinct_name").select(); 
+      const {data, error} = await client.from("name_distinct").select(); 
       if(error) {
         console.log("Entry.js failed fetching hints:", error);
       } else {

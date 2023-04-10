@@ -16,11 +16,12 @@ export default function BrowseDate() {
     }
 
     async function fetchDates() {
-      const {data, error} = await client.from("exercises").select("date, name, max_weight, max_reps, total_sets").limit(100).order("date", {"ascending": false});
+      // const {data, error} = await client.from("exercises").select("date, name, max_weight, max_reps, total_sets").limit(100).order("date", {"ascending": false});
+      const {data, error} = await client.from("browse_date_sorted").select();
       if(error) {
         console.log("BrowseDate.js failed fetching dates:", error);
       } else {
-        // console.log("date data:", data);
+        console.log("date data length:", data.length);
 
         let lastDate = data[0].date;
         let lastDateGroup = []

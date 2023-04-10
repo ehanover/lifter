@@ -11,7 +11,7 @@ export default function Type() {
   const [exercises, setExercises] = useState([])
 
   const push = ["bench", "dip", "incline press", "lat incline press machine", "lat raise", "military press", "pec fly", "shoulder press", "tricep overhead pull", "tricep pull down split"];
-  const pull = ["bar pull", "bar pull iso", "bicep curl", "face pull split", "hammer curl", "high row machine", "low row split", "preacher curl bench", "preacher curl machine", "pull down", "pull down machine", "pull up", "rear delt", "shrug"];
+  const pull = ["bar pull", "bar pull iso", "bicep curl", "face pull split", "hammer curl", "high row machine", "low row", "low row split", "preacher curl bench", "preacher curl machine", "pull down", "pull down machine", "pull up", "rear delt", "shrug", "straight arm pull down"];
   const leg = ["squat", "calf raises", "deadlift", "hip abduction", "hip adduction", "leg extension", "leg press", "seated leg curl", "split lunge", "split squat machine", "squat"];
 
   const filterByType = (name) => {
@@ -43,7 +43,7 @@ export default function Type() {
       return;
 
     async function fetchExercises() {
-      const {data, error} = await client.from("distinct_name").select().order("name"); 
+      const {data, error} = await client.from("name_distinct").select().order("name"); 
       // const {data, error} = await client.from("exercises").select("name").order("name");
       if(error) {
         console.log("Type.js failed fetching exercises:", error);
