@@ -12,7 +12,7 @@ export default function BrowseType() {
       
       <p className="page-title">Browse by Exercise</p>
 
-      <div className="exercise-category" onClick={() => navigate("/type/push")} style={{backgroundColor: "#AA5755"}}>Push</div>
+      <div className="exercise-category" onClick={() => navigate("/type/push")} style={{backgroundColor: "#CC6766"}}>Push</div>
       <div className="exercise-category" onClick={() => navigate("/type/pull")} style={{backgroundColor: "#83D0AA"}}>Pull</div>
       <div className="exercise-category" onClick={() => navigate("/type/leg")} style={{backgroundColor: "#6495ED"}}>Legs</div>
       <div className="exercise-category" onClick={() => navigate("/type/all")} style={{backgroundColor: "#9398a0"}}>All</div>

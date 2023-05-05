@@ -30,7 +30,12 @@ export default function Exercise() {
   }
 
   if(!instances) {
-	  return <p>Loading...</p>
+	  return (
+      <div>
+        <Header />
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   return (

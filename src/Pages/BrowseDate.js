@@ -21,7 +21,6 @@ export default function BrowseDate() {
       if(error) {
         console.log("BrowseDate.js failed fetching dates:", error);
       } else {
-        console.log("date data length:", data.length);
 
         let lastDate = data[0].date;
         let lastDateGroup = []
@@ -51,7 +50,12 @@ export default function BrowseDate() {
   }
 
   if(!dateData) {
-    return <p>Loading...</p>
+    return (
+      <div>
+        <Header />
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   return (

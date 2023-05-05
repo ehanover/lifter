@@ -10,9 +10,9 @@ export default function Type() {
   const {typeParam} = useParams();
   const [exercises, setExercises] = useState([])
 
-  const push = ["bench", "dip", "incline press", "lat incline press machine", "lat raise", "military press", "pec fly", "shoulder press", "tricep overhead pull", "tricep pull down split"];
-  const pull = ["bar pull", "bar pull iso", "bicep curl", "face pull split", "hammer curl", "high row machine", "low row", "low row split", "preacher curl bench", "preacher curl machine", "pull down", "pull down machine", "pull up", "rear delt", "shrug", "straight arm pull down"];
-  const leg = ["squat", "calf raises", "deadlift", "hip abduction", "hip adduction", "leg extension", "leg press", "seated leg curl", "split lunge", "split squat machine", "squat"];
+  const push = ["bench", "dip", "decline press machine", "incline press", "incline press machine", "lat raise", "military press", "pec fly", "shoulder press", "tricep overhead pull", "tricep pull down", "tricep pull down split"];
+  const pull = ["barbell row", "bar pull", "bar pull iso", "bicep curl", "bicep curl machine", "face pull split", "hammer curl", "high row machine", "low row", "low row split", "preacher curl bench", "preacher curl machine", "pull down", "pull down machine", "pull up", "rear delt", "shrug", "straight arm pull down"];
+  const leg = ["squat", "calf raise", "deadlift", "hip abduction", "hip adduction", "leg extension", "leg press", "seated leg curl", "split lunge", "split squat machine", "squat"];
 
   const filterByType = (name) => {
     if(typeParam === "all") {
