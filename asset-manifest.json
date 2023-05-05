@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/lifter/static/css/main.855ee2cb.css",
-    "main.js": "/lifter/static/js/main.40ba1749.js",
+    "main.css": "/lifter/static/css/main.68febdc1.css",
+    "main.js": "/lifter/static/js/main.47327501.js",
     "static/media/Qaz-Regular.ttf": "/lifter/static/media/Qaz-Regular.a126cdac043c9bbd661d.ttf",
     "index.html": "/lifter/index.html",
-    "main.855ee2cb.css.map": "/lifter/static/css/main.855ee2cb.css.map",
-    "main.40ba1749.js.map": "/lifter/static/js/main.40ba1749.js.map"
+    "main.68febdc1.css.map": "/lifter/static/css/main.68febdc1.css.map",
+    "main.47327501.js.map": "/lifter/static/js/main.47327501.js.map"
   },
   "entrypoints": [
-    "static/css/main.855ee2cb.css",
-    "static/js/main.40ba1749.js"
+    "static/css/main.68febdc1.css",
+    "static/js/main.47327501.js"
   ]
 }
